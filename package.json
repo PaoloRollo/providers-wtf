@@ -1,6 +1,6 @@
 {
   "name": "providers-wtf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for converting between ethers and viem.",
   "main": "lib/main/index.js",
   "typings": "lib/main/index.d.ts",
