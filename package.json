@@ -1,9 +1,9 @@
 {
   "name": "providers-wtf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for converting between ethers and viem.",
-  "main": "lib/main/index.js",
-  "typings": "lib/main/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "module": "lib/module/index.js",
   "repository": "https://github.com/PaoloRollo/providers-wtf",
   "author": "Paolo Rollo",
@@ -20,7 +20,7 @@
     "build:module": "tsc -p tsconfig.module.json",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
-    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run"
+    "build:types": "tsc -p ./tsconfig.json --outDir lib --declaration true && api-extractor run"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
