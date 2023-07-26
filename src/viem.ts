@@ -1,5 +1,5 @@
 import { providers } from "ethers";
-import { PublicClient } from "viem";
+import { PublicClient, WalletClient } from "viem";
 
 export const toEthersJsonRpcProvider = async (
   client: PublicClient
@@ -29,6 +29,15 @@ export const toEthersWeb3Provider = async (
   client: PublicClient
 ): Promise<providers.Web3Provider | null> => {
   const { transport } = client;
+  const { request } = transport;
+  const eip1193Provider = { request };
+  return new providers.Web3Provider(eip1193Provider);
+};
+
+export const toEthersWeb3ProviderWithSigner = async (
+  walletClient: WalletClient
+): Promise<providers.Web3Provider | null> => {
+  const { transport } = walletClient;
   const { request } = transport;
   const eip1193Provider = { request };
   return new providers.Web3Provider(eip1193Provider);
