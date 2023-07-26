@@ -51,8 +51,8 @@ These are the currently available methods, with more coming soon:
 - [x] `toEthersWeb3Provider` - converts a `PublicClient` to a `Web3Provider`
 - [x] `toEthersWsProvider` - converts a `PublicClient` to a `WebsocketProvider`
 - [x] `toEthersWeb3ProviderWithSigner` - converts a `WalletClient` to a `Web3Provider`
-- [x] `toViemPublicClient` - converts a `JsonRpcProvider` to a `PublicClient`
-- [x] `toViemWsPublicClient` - converts a `WebsocketProvider` to a `PublicClient`
+- [ ] `toViemPublicClient` - converts a `JsonRpcProvider` to a `PublicClient`
+- [ ] `toViemWsPublicClient` - converts a `WebsocketProvider` to a `PublicClient`
 
 ### `PublicClient` to `JsonRpcProvider`
 
