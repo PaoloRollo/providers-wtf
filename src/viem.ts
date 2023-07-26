@@ -1,9 +1,9 @@
 import { providers } from "ethers";
 import { PublicClient, WalletClient } from "viem";
 
-export const toEthersJsonRpcProvider = async (
+export const toEthersJsonRpcProvider = (
   client: PublicClient
-): Promise<providers.JsonRpcProvider | null> => {
+): providers.JsonRpcProvider | null => {
   const { chain } = client;
   if (!chain) return null;
   // Get the default chain RPC url
@@ -13,9 +13,9 @@ export const toEthersJsonRpcProvider = async (
   return new providers.JsonRpcProvider(defaultRPCUrl.http[0]);
 };
 
-export const toEthersWsProvider = async (
+export const toEthersWsProvider = (
   client: PublicClient
-): Promise<providers.WebSocketProvider | null> => {
+): providers.WebSocketProvider | null => {
   const { chain } = client;
   if (!chain) return null;
   // Get the default chain RPC url
@@ -25,18 +25,18 @@ export const toEthersWsProvider = async (
   return new providers.WebSocketProvider(defaultRPCUrl.webSocket[0]);
 };
 
-export const toEthersWeb3Provider = async (
+export const toEthersWeb3Provider = (
   client: PublicClient
-): Promise<providers.Web3Provider | null> => {
+): providers.Web3Provider => {
   const { transport } = client;
   const { request } = transport;
   const eip1193Provider = { request };
   return new providers.Web3Provider(eip1193Provider);
 };
 
-export const toEthersWeb3ProviderWithSigner = async (
+export const toEthersWeb3ProviderWithSigner = (
   walletClient: WalletClient
-): Promise<providers.Web3Provider | null> => {
+): providers.Web3Provider => {
   const { transport } = walletClient;
   const { request } = transport;
   const eip1193Provider = { request };

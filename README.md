@@ -121,7 +121,7 @@ import { providers } from "ethers";
 import { toViemPublicClient } from "providers-wtf";
 
 const provider = new providers.JsonRpcProvider(<YOUR_PROVIDER_URL>)
-const publicClient = toViemPublicClient(provider)
+const publicClient = await toViemPublicClient(provider)
 ```
 
 ### `WebsocketProvider` to `PublicClient`
@@ -131,7 +131,7 @@ import { providers } from "ethers";
 import { toViemWsPublicClient } from "providers-wtf";
 
 const provider = new providers.WebsocketProvider(<YOUR_PROVIDER_URL>)
-const publicClient = toViemWsPublicClient(provider)
+const publicClient = await toViemWsPublicClient(provider)
 ```
 
 ## 🤝 Contributing
