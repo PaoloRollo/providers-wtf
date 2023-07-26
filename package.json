@@ -19,7 +19,8 @@
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
-    "fix:lint": "eslint src --ext .ts --fix"
+    "fix:lint": "eslint src --ext .ts --fix",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
@@ -44,6 +45,7 @@
     "README.md"
   ],
   "dependencies": {
+    "@microsoft/api-extractor": "^7.36.3",
     "ethers": "^5.7.0",
     "viem": "^1.4.1"
   }
